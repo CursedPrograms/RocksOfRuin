@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rocks of Ruin - Arcade Phantasm</title>
+    <meta name="description" content="Rocks of Ruin, an Arcade Phantasm game by Cursed Entertainment: blast through an enormous asteroid field where some rocks hide things that crawl out and hunt you.">
+    <link rel="icon" type="image/png" href="images/cursed-logo.png">
+    <link rel="stylesheet" href="site/style.css">
+</head>
+
+<body>
+    <canvas id="game"></canvas>
+
+    <div id="splash">
+        <h1 class="title">ROCKS <span>OF</span> RUIN</h1>
+        <p class="tag">An Arcade Phantasm game</p>
+        <img class="cursed-logo" src="images/cursed-logo.png" alt="Cursed Entertainment">
+        <p class="copyright">&copy; Cursed Entertainment 2026</p>
+        <p class="press">Press any key or tap to start</p>
+        <p class="keys">Arrows / WASD fly &middot; Space fire &middot; U upgrades &middot; P pause &middot; M mute</p>
+    </div>
+
+    <div id="upgrades" hidden>
+        <h2>SALVAGE BAY</h2>
+        <p id="salvageLine">Salvage 0</p>
+        <ul id="upList"></ul>
+        <p class="hint">1-7 or tap to buy &middot; U or Esc to fly on</p>
+        <button id="upClose" type="button">FLY ON</button>
+    </div>
+
+    <div id="touch">
+        <div id="stick"><div id="knob"></div></div>
+        <button id="tFire" type="button">FIRE</button>
+        <button id="tUp" type="button">UPG</button>
+        <button id="tPause" type="button">II</button>
+    </div>
+
+    <script src="site/sfx.js"></script>
+    <script src="site/game.js"></script>
+</body>
+
+</html>

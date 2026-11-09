@@ -16,15 +16,71 @@
 
 # ROCKS OF RUIN
 
-**An [Arcade Phantasm](https://arcade-phantasm.netlify.app/) game** · The browser version: play it on its page once it's built. The Windows exe is [RocksOfRuin](https://github.com/CursedPrograms/RocksOfRuin).
+**An [Arcade Phantasm](https://arcade-phantasm.netlify.app/) game** · **[Play it](https://cursedprograms.github.io/rocks-of-ruin/)** in your browser, on a computer or a phone.
 
 Navigate an enormous asteroid field. Asteroids split into smaller pieces, some hide alien creatures, and the salvage you collect upgrades your weapons. The field gets more dangerous the deeper you go.
 
 **The twist:** Crack the wrong rock and something crawls out.
 
-## Status
+![Rocks of Ruin: the ship deep in the field, glowing rocks, aliens out of their nests, salvage and the minimap](images/screenshot-play.png)
 
-In development. Plain HTML, CSS and JavaScript on a canvas: `index.html`, `site/style.css`, `site/game.js`, sound made with Web Audio.
+## Versions
+
+Every version of the game lives in this repo.
+
+| Version | Where | Status |
+| --- | --- | --- |
+| Browser | the repo root · [play it](https://cursedprograms.github.io/rocks-of-ruin/) | this one, playable now |
+| Windows exe | `cpp/` | coming |
+| Android | `android/` | coming |
+
+## How to play
+
+- You start at the **beacon**, the green ring at the heart of the field. The further out you fly (and the longer you last), the higher the **DEPTH**: rocks get denser and faster, more of them are alien nests, and **debris storms** blow streams of fast rocks across your path.
+- Shoot the rocks: **big > medium > small > dust**. Blue-edged **iron** rocks take more hits and drop more salvage.
+- Some rocks are **nests**. Watch for faint green veins pulsing inside. Crack one and something crawls out:
+  - **Skitters**: fast little ticks that swarm straight at you.
+  - **Spitters**: floating eyes that keep their distance and spit acid.
+  - **Leeches**: fat slugs that stop, swell and lunge. Kill one and it splits into skitters.
+  - **Wraiths**: they fade out of reach, circle you, then come back solid and dash. You can't hit them while they're faded.
+- Pick up the green **salvage** that rocks and aliens drop (it's pulled in when you fly close), then press **U** to open the **salvage bay** (the game waits while it's open):
+  rate of fire, spread shot, piercing rounds, homing, shields, thrusters and hull repair.
+- Rocks and aliens wear down your **hull**. Shields soak hits first and recharge. When the hull's gone, so are you.
+- The **minimap** (bottom right) shows the whole field, the rings of depth, the aliens and your view. Arrows at the screen edge point at aliens hunting you from off screen.
+- Your best score is saved in the browser.
+
+![The salvage bay](images/screenshot-salvage-bay.png)
+
+## Controls
+
+| Key | Does |
+| --- | --- |
+| ← → or A D | turn |
+| ↑ or W | thrust |
+| ↓ or S | brake |
+| Space | fire (hold) |
+| U or Tab | salvage bay (1-7 buy, U or Esc to fly on) |
+| P | pause |
+| M | mute |
+| Space or R | fly again after you're lost |
+
+**On a phone:** the stick on the left turns you and thrusts when pushed far, **FIRE** on the right, **UPG** opens the salvage bay, **II** pauses.
+
+![The splash before the game](images/screenshot-splash.png)
+
+## The files
+
+Plain HTML5 canvas and JavaScript, no frameworks and no build step: open `index.html` or serve the folder.
+
+| File | What it is |
+| --- | --- |
+| `index.html` | the page: canvas, splash, salvage bay, touch controls |
+| `site/style.css` | the page styling, in the Cursed colours |
+| `site/game.js` | the game: the field, the ship, rocks, aliens, salvage, storms, the minimap |
+| `site/sfx.js` | every sound, made with the Web Audio API (no audio files) |
+| `images/` | the Cursed logo and the screenshots |
+
+Add `#shot` to the URL for a frozen, busy moment deep in the field (it's how the screenshots are made).
 
 ## Also in the arcade
 

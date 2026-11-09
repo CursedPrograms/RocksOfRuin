@@ -1,0 +1,270 @@
+/* Rocks of Ruin: the canvas fills the window; the splash, the salvage bay and the touch controls sit over it.
+   Cursed colours, solid only: no gradients, no shadows (the glow is drawn inside the canvas). */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #020611;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#game {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* the splash */
+#splash {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background-color: rgba(2, 6, 17, 0.55);
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+
+#splash.gone {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#splash .title {
+    margin: 0;
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    font-size: min(96px, 13vw);
+    letter-spacing: 0.06em;
+    color: #34a9e3;
+    -webkit-text-stroke: 2px #f088e9;
+}
+
+#splash .title span {
+    color: #f088e9;
+    -webkit-text-stroke: 0;
+    font-size: 0.5em;
+    vertical-align: middle;
+}
+
+#splash .tag {
+    margin: 0 0 10px;
+    color: #39ff6a;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+#splash .cursed-logo {
+    width: min(260px, 50vw);
+}
+
+#splash .copyright {
+    margin: 0;
+    color: #c2c2c2;
+    font-size: 15px;
+}
+
+#splash .press {
+    margin: 18px 0 0;
+    color: #f088e9;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    animation: blink 1.2s ease-in-out infinite alternate;
+}
+
+#splash .keys {
+    margin: 0;
+    color: #34a9e3;
+    font-size: 13px;
+}
+
+@keyframes blink {
+    to { opacity: 0.3; }
+}
+
+/* the salvage bay: buy upgrades with the salvage you've picked up */
+#upgrades {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(520px, 92vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 18px 22px;
+    background-color: #001725;
+    border: 2px solid #f088e9;
+    text-align: center;
+}
+
+#upgrades[hidden] {
+    display: none;
+}
+
+#upgrades h2 {
+    margin: 0 0 4px;
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    color: #f088e9;
+    letter-spacing: 0.1em;
+}
+
+#salvageLine {
+    margin: 0 0 12px;
+    color: #39ff6a;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#upList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#upList button {
+    display: flex;
+    width: 100%;
+    margin: 0 0 6px;
+    padding: 9px 12px;
+    align-items: center;
+    gap: 10px;
+    background-color: #020611;
+    border: 1px solid #005184;
+    color: #ffffff;
+    font: inherit;
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+}
+
+#upList button:hover:not(:disabled),
+#upList button:focus-visible {
+    border-color: #34a9e3;
+    background-color: #005184;
+}
+
+#upList button:disabled {
+    cursor: default;
+    color: #6f8797;
+}
+
+#upList .key {
+    color: #f088e9;
+    font-weight: bold;
+    width: 1.2em;
+}
+
+#upList .name {
+    flex: 1;
+}
+
+#upList .name small {
+    display: block;
+    color: #34a9e3;
+    font-size: 12px;
+}
+
+#upList .pips {
+    color: #39ff6a;
+    letter-spacing: 2px;
+}
+
+#upList .cost {
+    color: #39ff6a;
+    min-width: 3.5em;
+    text-align: right;
+}
+
+#upgrades .hint {
+    margin: 10px 0 8px;
+    color: #c2c2c2;
+    font-size: 13px;
+}
+
+#upClose {
+    padding: 8px 28px;
+    background-color: #f088e9;
+    border: 0;
+    color: #020611;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+/* touch controls: only on phones and tablets, after the first touch */
+#touch {
+    display: none;
+}
+
+body.touch.playing #touch {
+    display: block;
+}
+
+#stick {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    width: 130px;
+    height: 130px;
+    border: 2px solid #34a9e3;
+    border-radius: 50%;
+    background-color: rgba(0, 23, 37, 0.5);
+}
+
+#knob {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #34a9e3;
+    opacity: 0.8;
+}
+
+#touch button {
+    position: absolute;
+    border: 2px solid #f088e9;
+    background-color: rgba(0, 23, 37, 0.6);
+    color: #f088e9;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 50%;
+}
+
+#tFire {
+    right: 26px;
+    bottom: 34px;
+    width: 96px;
+    height: 96px;
+}
+
+#tUp {
+    right: 136px;
+    bottom: 24px;
+    width: 58px;
+    height: 58px;
+    border-color: #39ff6a !important;
+    color: #39ff6a !important;
+}
+
+#tPause {
+    right: 20px;
+    top: 64px;
+    width: 46px;
+    height: 46px;
+}
