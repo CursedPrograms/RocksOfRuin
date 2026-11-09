@@ -16,7 +16,7 @@
 
 # ROCKS OF RUIN
 
-**An [Arcade Phantasm](https://arcade-phantasm.netlify.app/) game** · **[Play it](https://cursedprograms.github.io/rocks-of-ruin/)** in your browser, on a computer or a phone.
+**An [Arcade Phantasm](https://arcade-phantasm.netlify.app/) game** · **[Play it](https://cursedprograms.github.io/RocksOfRuin/)** in your browser, on a computer or a phone.
 
 Navigate an enormous asteroid field. Asteroids split into smaller pieces, some hide alien creatures, and the salvage you collect upgrades your weapons. The field gets more dangerous the deeper you go.
 
@@ -30,7 +30,7 @@ Every version of the game lives in this repo.
 
 | Version | Where | Status |
 | --- | --- | --- |
-| Browser | the repo root · [play it](https://cursedprograms.github.io/rocks-of-ruin/) | this one, playable now |
+| Browser | the repo root · [play it](https://cursedprograms.github.io/RocksOfRuin/) | this one, playable now |
 | Windows exe | `cpp/` | coming |
 | Android | `android/` | coming |
 
@@ -84,7 +84,7 @@ Add `#shot` to the URL for a frozen, busy moment deep in the field (it's how the
 
 ## Also in the arcade
 
-[Killer Stardust](https://github.com/CursedPrograms/killer-stardust) · PROTOCOL.hex · SÉANCE · RICOCHET REAPER · GRAVE DANGER · VORTEX · ORBIT · ROCKS OF RUIN · DEVOURER
+[KillerStardust](https://github.com/CursedPrograms/KillerStardust) · [ProtocolHex](https://github.com/CursedPrograms/ProtocolHex) · [Seance](https://github.com/CursedPrograms/Seance) · [RicochetReaper](https://github.com/CursedPrograms/RicochetReaper) · [GraveDanger](https://github.com/CursedPrograms/GraveDanger) · [Vortex](https://github.com/CursedPrograms/Vortex) · [Orbit](https://github.com/CursedPrograms/Orbit) · RocksOfRuin · [Devourer](https://github.com/CursedPrograms/Devourer)
 
 <br>
 <div align="center">
